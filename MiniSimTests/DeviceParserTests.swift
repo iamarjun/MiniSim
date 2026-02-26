@@ -7,6 +7,16 @@ class DeviceParserTests: XCTestCase {
     static func sendText(device: Device, text: String) throws {
     }
 
+    static func push(device: Device, sourcePath: String, destinationPath: String) throws {
+    }
+
+    static func broadcastMediaScan(device: Device, path: String) throws {
+    }
+
+    static func directoryExists(device: Device, path: String) throws -> Bool {
+      false
+    }
+
     static func launchLogCat(device: Device) throws {
     }
 
@@ -333,6 +343,16 @@ class DeviceParserTests: XCTestCase {
   func testAndroidEmulatorParserWithADBFailure() {
     class FailingADB: ADBProtocol {
       static func sendText(device: Device, text: String) throws {
+      }
+
+      static func push(device: Device, sourcePath: String, destinationPath: String) throws {
+      }
+
+      static func broadcastMediaScan(device: Device, path: String) throws {
+      }
+
+      static func directoryExists(device: Device, path: String) throws -> Bool {
+        false
       }
 
       static func launchLogCat(device: Device) throws {

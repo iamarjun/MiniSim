@@ -21,6 +21,9 @@ protocol ADBProtocol {
   static func isAccesibilityOn(deviceId: String) -> Bool
   static func toggleAccesibility(deviceId: String)
   static func sendText(device: Device, text: String) throws
+  static func push(device: Device, sourcePath: String, destinationPath: String) throws
+  static func broadcastMediaScan(device: Device, path: String) throws
+  static func directoryExists(device: Device, path: String) throws -> Bool
   static func launchLogCat(device: Device) throws
 }
 
@@ -149,6 +152,67 @@ final class ADB: ADBProtocol {
     try shell.execute(command: "\(adbPath) -s \(deviceId) shell input text \"\(formattedText)\"")
   }
 
+  static func push(device: Device, sourcePath: String, destinationPath: String) throws {
+    let adbPath = try ADB.getAdbPath()
+    guard let deviceId = device.identifier else {
+      throw DeviceError.deviceNotFound
+    }
+
+    let destinationDir = (destinationPath as NSString).deletingLastPathComponent
+    let quotedDestinationDir = adbShellQuote(destinationDir)
+
+    try shell.execute(
+      command: adbPath,
+      arguments: ["-s", deviceId, "shell", "mkdir", "-p", quotedDestinationDir]
+    )
+    try shell.execute(
+      command: adbPath,
+      arguments: ["-s", deviceId, "push", sourcePath, destinationPath]
+    )
+  }
+
+  static func broadcastMediaScan(device: Device, path: String) throws {
+    let adbPath = try ADB.getAdbPath()
+    guard let deviceId = device.identifier else {
+      throw DeviceError.deviceNotFound
+    }
+
+    let fileUri = "file://\(path)"
+    let quotedFileUri = adbShellQuote(fileUri)
+    try shell.execute(
+      command: adbPath,
+      arguments: [
+        "-s",
+        deviceId,
+        "shell",
+        "am",
+        "broadcast",
+        "-a",
+        "android.intent.action.MEDIA_SCANNER_SCAN_FILE",
+        "--receiver-include-background",
+        "-d",
+        quotedFileUri
+      ]
+    )
+  }
+
+  static func directoryExists(device: Device, path: String) throws -> Bool {
+    let adbPath = try ADB.getAdbPath()
+    guard let deviceId = device.identifier else {
+      throw DeviceError.deviceNotFound
+    }
+
+    do {
+      try shell.execute(
+        command: adbPath,
+        arguments: ["-s", deviceId, "shell", "test", "-d", adbShellQuote(path)]
+      )
+      return true
+    } catch {
+      return false
+    }
+  }
+
   static func launchLogCat(device: Device) throws {
     guard let deviceId = device.identifier else {
       throw DeviceError.deviceNotFound
@@ -158,4 +222,12 @@ final class ADB: ADBProtocol {
     let logcatCommand = "\(adbPath) -s \(deviceId) logcat -v color"
     try TerminalService.launchTerminal(command: logcatCommand)
   }
+
+  private static func adbShellQuote(_ value: String) -> String {
+    let escaped = value
+      .replacingOccurrences(of: "\\", with: "\\\\")
+      .replacingOccurrences(of: "\"", with: "\\\"")
+    return "\"\(escaped)\""
+  }
+
 }
