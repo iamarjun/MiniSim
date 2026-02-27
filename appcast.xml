@@ -10,6 +10,26 @@ xmlns:dc="http://purl.org/dc/elements/1.1/">
     updates.</description>
     <language>en</language>
     <item>
+      <title>0.10.0</title>
+      <description>
+        <![CDATA[ <ul>
+        <li>NEW: Upload local files/folders to iOS simulators and Android emulators/devices</li>
+        <li>Improve Android uploads with Downloads path fallback and media reindexing</li>
+        <li>Fix uploads for files/folders containing spaces</li>
+        <li>Tweak Android menu order and upload tooltips</li>
+        <li>Add tests and logging for upload flow</li>
+        </ul> ]]>
+</description>
+      <pubDate>2026-02-27</pubDate>
+      <releaseNotesLink>
+      https://github.com/okwasniewski/MiniSim/releases/tag/v0.10.0</releaseNotesLink>
+      <sparkle:minimumSystemVersion>
+      12.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/okwasniewski/MiniSim/releases/download/v0.10.0/MiniSim.app.zip"
+      sparkle:version="20" sparkle:shortVersionString="0.10.0"
+      length="0" type="application/octet-stream" />
+    </item>
+    <item>
       <title>0.9.1</title>
       <description>
         <![CDATA[ <ul>
