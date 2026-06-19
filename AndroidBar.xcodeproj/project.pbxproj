@@ -44,7 +44,7 @@
 		763EEB132A26896B008428F1 /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 763EEB122A26896B008428F1 /* CodeEditor */; };
 		7645D4BE2982A1B100019227 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D4BD2982A1B100019227 /* DeviceService.swift */; };
 		7645D4C22982CA9600019227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D4C12982CA9600019227 /* AppDelegate.swift */; };
-		7645D4C42982CB2B00019227 /* MiniSim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D4C32982CB2B00019227 /* MiniSim.swift */; };
+		7645D4C42982CB2B00019227 /* AndroidBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D4C32982CB2B00019227 /* AndroidBar.swift */; };
 		7645D5012982E6FA00019227 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D5002982E6FA00019227 /* main.swift */; };
 		7645D5032983186100019227 /* NSMenuItem+ImageInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7645D5022983186100019227 /* NSMenuItem+ImageInit.swift */; };
 		76489D5A29BFC60C0070EF03 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76489D5929BFC60C0070EF03 /* WelcomeView.swift */; };
@@ -114,7 +114,7 @@
 			containerPortal = 766BD2282981628A0042261B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 766BD22F2981628A0042261B;
-			remoteInfo = MiniSim;
+			remoteInfo = AndroidBar;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -153,7 +153,7 @@
 		7631218F2A12B45000EE7F48 /* CustomCommandFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCommandFormViewModel.swift; sourceTree = "<group>"; };
 		7645D4BD2982A1B100019227 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		7645D4C12982CA9600019227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7645D4C32982CB2B00019227 /* MiniSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniSim.swift; sourceTree = "<group>"; };
+		7645D4C32982CB2B00019227 /* AndroidBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidBar.swift; sourceTree = "<group>"; };
 		7645D5002982E6FA00019227 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7645D5022983186100019227 /* NSMenuItem+ImageInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+ImageInit.swift"; sourceTree = "<group>"; };
 		76489D5929BFC60C0070EF03 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -163,10 +163,10 @@
 		76630F0D29BDE7EB00FB64F9 /* ParametersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersTable.swift; sourceTree = "<group>"; };
 		76630F2829BE09D800FB64F9 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		76630F2A29C718F500FB64F9 /* AndroidPathInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidPathInput.swift; sourceTree = "<group>"; };
-		766BD2302981628A0042261B /* MiniSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		766BD2302981628A0042261B /* AndroidBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndroidBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		766BD2372981628C0042261B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		766BD23A2981628C0042261B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		766BD23C2981628C0042261B /* MiniSim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniSim.entitlements; sourceTree = "<group>"; };
+		766BD23C2981628C0042261B /* AndroidBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AndroidBar.entitlements; sourceTree = "<group>"; };
 		76730BB8298C1DF80019C680 /* DeviceMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMenuItem.swift; sourceTree = "<group>"; };
 		7677999729C25894009030F8 /* OnboardingPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPager.swift; sourceTree = "<group>"; };
 		7677999B29C26240009030F8 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -181,11 +181,11 @@
 		7699511C2C845B1900462287 /* DeviceParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceParser.swift; sourceTree = "<group>"; };
 		7699511E2C845CBA00462287 /* DeviceParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceParserTests.swift; sourceTree = "<group>"; };
 		76AC9AF52A0EA82C00864A8B /* CustomCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCommands.swift; sourceTree = "<group>"; };
-		76B70F742B0D359D009D87A4 /* MiniSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B70F742B0D359D009D87A4 /* AndroidBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AndroidBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B70F7D2B0D361A009D87A4 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
 		76B70F812B0D50FE009D87A4 /* ADBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBTests.swift; sourceTree = "<group>"; };
 		76B70F832B0D5AB4009D87A4 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
-		76BF0ADA2C8CB4CD003BE568 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = MiniSim.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
+		76BF0ADA2C8CB4CD003BE568 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = AndroidBar.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
 		76BF0ADC2C8DF660003BE568 /* AccessibilityElementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityElementTests.swift; sourceTree = "<group>"; };
 		76BF0ADE2C8E01B3003BE568 /* CustomCommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCommandService.swift; sourceTree = "<group>"; };
 		76BF0AE02C8E027D003BE568 /* DeviceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConstants.swift; sourceTree = "<group>"; };
@@ -361,8 +361,8 @@
 		766BD2272981628A0042261B = {
 			isa = PBXGroup;
 			children = (
-				766BD2322981628A0042261B /* MiniSim */,
-				76B70F752B0D359D009D87A4 /* MiniSimTests */,
+				766BD2322981628A0042261B /* AndroidBar */,
+				76B70F752B0D359D009D87A4 /* AndroidBarTests */,
 				766BD2312981628A0042261B /* Products */,
 				765077C42C46F04A00C7B5F3 /* Frameworks */,
 			);
@@ -371,13 +371,13 @@
 		766BD2312981628A0042261B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				766BD2302981628A0042261B /* MiniSim.app */,
-				76B70F742B0D359D009D87A4 /* MiniSimTests.xctest */,
+				766BD2302981628A0042261B /* AndroidBar.app */,
+				76B70F742B0D359D009D87A4 /* AndroidBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		766BD2322981628A0042261B /* MiniSim */ = {
+		766BD2322981628A0042261B /* AndroidBar */ = {
 			isa = PBXGroup;
 			children = (
 				768F8ECC2995575B00DFBCDB /* Info.plist */,
@@ -392,14 +392,14 @@
 				76E4451129D4391000039025 /* Onboarding.swift */,
 				765C44C72A2A6C9600FCC159 /* MainMenu.xib */,
 				7630B27B2987207200D8B57D /* Menu.swift */,
-				7645D4C32982CB2B00019227 /* MiniSim.swift */,
+				7645D4C32982CB2B00019227 /* AndroidBar.swift */,
 				7645D5002982E6FA00019227 /* main.swift */,
 				766BD2372981628C0042261B /* Assets.xcassets */,
-				766BD23C2981628C0042261B /* MiniSim.entitlements */,
+				766BD23C2981628C0042261B /* AndroidBar.entitlements */,
 				76BF0ADA2C8CB4CD003BE568 /* Package.resolved */,
 				766BD2392981628C0042261B /* Preview Content */,
 			);
-			path = MiniSim;
+			path = AndroidBar;
 			sourceTree = "<group>";
 		};
 		766BD2392981628C0042261B /* Preview Content */ = {
@@ -429,7 +429,7 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		76B70F752B0D359D009D87A4 /* MiniSimTests */ = {
+		76B70F752B0D359D009D87A4 /* AndroidBarTests */ = {
 			isa = PBXGroup;
 			children = (
 				760DEACC2B0DFB5B00253576 /* Mocks */,
@@ -447,7 +447,7 @@
 				912D7A2027F3DDA86839E7AE /* CollectionGetTests.swift */,
 				63E9205F1463934FDB7D92FF /* CommandTests.swift */,
 			);
-			path = MiniSimTests;
+			path = AndroidBarTests;
 			sourceTree = "<group>";
 		};
 		76E5FAD1299BEBD2007987E0 /* MenuItems */ = {
@@ -482,9 +482,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		766BD22F2981628A0042261B /* MiniSim */ = {
+		766BD22F2981628A0042261B /* AndroidBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 766BD23F2981628C0042261B /* Build configuration list for PBXNativeTarget "MiniSim" */;
+			buildConfigurationList = 766BD23F2981628C0042261B /* Build configuration list for PBXNativeTarget "AndroidBar" */;
 			buildPhases = (
 				766BD22C2981628A0042261B /* Sources */,
 				766BD22D2981628A0042261B /* Frameworks */,
@@ -496,7 +496,7 @@
 			dependencies = (
 				4A78928A2AF1A9A3004D3FC8 /* PBXTargetDependency */,
 			);
-			name = MiniSim;
+			name = AndroidBar;
 			packageProductDependencies = (
 				7630B26A2986B4D500D8B57D /* KeyboardShortcuts */,
 				7630B26F2986C0F200D8B57D /* LaunchAtLogin */,
@@ -507,13 +507,13 @@
 				765077C52C46F04A00C7B5F3 /* Settings */,
 				76BF0AD82C8CB3E6003BE568 /* AcknowList */,
 			);
-			productName = MiniSim;
-			productReference = 766BD2302981628A0042261B /* MiniSim.app */;
+			productName = AndroidBar;
+			productReference = 766BD2302981628A0042261B /* AndroidBar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		76B70F732B0D359D009D87A4 /* MiniSimTests */ = {
+		76B70F732B0D359D009D87A4 /* AndroidBarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76B70F7C2B0D359E009D87A4 /* Build configuration list for PBXNativeTarget "MiniSimTests" */;
+			buildConfigurationList = 76B70F7C2B0D359E009D87A4 /* Build configuration list for PBXNativeTarget "AndroidBarTests" */;
 			buildPhases = (
 				76B70F702B0D359D009D87A4 /* Sources */,
 				76B70F712B0D359D009D87A4 /* Frameworks */,
@@ -525,9 +525,9 @@
 				76B70F802B0D4F9D009D87A4 /* PBXTargetDependency */,
 				76B70F792B0D359D009D87A4 /* PBXTargetDependency */,
 			);
-			name = MiniSimTests;
-			productName = MiniSimTests;
-			productReference = 76B70F742B0D359D009D87A4 /* MiniSimTests.xctest */;
+			name = AndroidBarTests;
+			productName = AndroidBarTests;
+			productReference = 76B70F742B0D359D009D87A4 /* AndroidBarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -549,7 +549,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 766BD22B2981628A0042261B /* Build configuration list for PBXProject "MiniSim" */;
+			buildConfigurationList = 766BD22B2981628A0042261B /* Build configuration list for PBXProject "AndroidBar" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -573,8 +573,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				766BD22F2981628A0042261B /* MiniSim */,
-				76B70F732B0D359D009D87A4 /* MiniSimTests */,
+				766BD22F2981628A0042261B /* AndroidBar */,
+				76B70F732B0D359D009D87A4 /* AndroidBarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -638,7 +638,7 @@
 				7677999C29C26240009030F8 /* SetupView.swift in Sources */,
 				76F269852A2A376A00424BDA /* CustomCommandError.swift in Sources */,
 				767799A029C30BF5009030F8 /* BlurredView.swift in Sources */,
-				7645D4C42982CB2B00019227 /* MiniSim.swift in Sources */,
+				7645D4C42982CB2B00019227 /* AndroidBar.swift in Sources */,
 				76BF0ADF2C8E01B3003BE568 /* CustomCommandService.swift in Sources */,
 				76F2A912299033EA002D4EF6 /* DeviceError.swift in Sources */,
 				76BF0AE12C8E027D003BE568 /* DeviceConstants.swift in Sources */,
@@ -733,7 +733,7 @@
 		};
 		76B70F792B0D359D009D87A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 766BD22F2981628A0042261B /* MiniSim */;
+			target = 766BD22F2981628A0042261B /* AndroidBar */;
 			targetProxy = 76B70F782B0D359D009D87A4 /* PBXContainerItemProxy */;
 		};
 		76B70F802B0D4F9D009D87A4 /* PBXTargetDependency */ = {
@@ -867,20 +867,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MiniSim/MiniSim.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AndroidBar/AndroidBar.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MiniSim/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AndroidBar/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MiniSim/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MiniSim;
+				INFOPLIST_FILE = AndroidBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AndroidBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -891,7 +891,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.10.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oskarkwasniewski.MiniSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskarkwasniewski.AndroidBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -903,20 +903,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MiniSim/MiniSimRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AndroidBar/AndroidBarRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 20;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MiniSim/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AndroidBar/Preview Content\"";
 				DEVELOPMENT_TEAM = Z3M9P6G4WY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MiniSim/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MiniSim;
+				INFOPLIST_FILE = AndroidBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AndroidBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -927,7 +927,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.10.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oskarkwasniewski.MiniSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskarkwasniewski.AndroidBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -950,12 +950,12 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pl.okwasniewski.MiniSimTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.okwasniewski.AndroidBarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniSim";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AndroidBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AndroidBar";
 			};
 			name = Debug;
 		};
@@ -974,18 +974,18 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pl.okwasniewski.MiniSimTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.okwasniewski.AndroidBarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniSim.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniSim";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AndroidBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AndroidBar";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		766BD22B2981628A0042261B /* Build configuration list for PBXProject "MiniSim" */ = {
+		766BD22B2981628A0042261B /* Build configuration list for PBXProject "AndroidBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				766BD23D2981628C0042261B /* Debug */,
@@ -994,7 +994,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		766BD23F2981628C0042261B /* Build configuration list for PBXNativeTarget "MiniSim" */ = {
+		766BD23F2981628C0042261B /* Build configuration list for PBXNativeTarget "AndroidBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				766BD2402981628C0042261B /* Debug */,
@@ -1003,7 +1003,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76B70F7C2B0D359E009D87A4 /* Build configuration list for PBXNativeTarget "MiniSimTests" */ = {
+		76B70F7C2B0D359E009D87A4 /* Build configuration list for PBXNativeTarget "AndroidBarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76B70F7A2B0D359E009D87A4 /* Debug */,
