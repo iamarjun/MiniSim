@@ -1,6 +1,6 @@
 //
 //  StatusBarController.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 26/01/2023.
 //
@@ -10,7 +10,7 @@ import Settings
 import SwiftUI
 import UserNotifications
 
-class MiniSim: NSObject {
+class AndroidBar: NSObject {
     private var menu: Menu!
 
     @objc let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -181,7 +181,7 @@ class MiniSim: NSObject {
     }
 }
 
-extension MiniSim: NSWindowDelegate {
+extension AndroidBar: NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
         NSApplication.shared.setActivationPolicy(.regular)
     }

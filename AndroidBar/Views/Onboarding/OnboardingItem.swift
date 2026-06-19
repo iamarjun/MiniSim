@@ -1,6 +1,6 @@
 //
 //  OnboardingItem.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 13/03/2023.
 //

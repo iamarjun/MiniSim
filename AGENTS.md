@@ -1,33 +1,33 @@
-# MiniSim - Agent Guidelines
+# AndroidBar - Agent Guidelines
 
-MiniSim is a macOS menu bar utility for launching iOS simulators and Android emulators. Written in Swift and AppKit.
+AndroidBar is a macOS menu bar utility for launching iOS simulators and Android emulators. Written in Swift and AppKit.
 
 ## Build Commands
 
 ```bash
 # Build the project
-xcodebuild -scheme MiniSim -configuration Debug build
+xcodebuild -scheme AndroidBar -configuration Debug build
 
 # Build for release
-xcodebuild -scheme MiniSim -configuration Release build
+xcodebuild -scheme AndroidBar -configuration Release build
 
 # Clean build
-xcodebuild -scheme MiniSim clean build
+xcodebuild -scheme AndroidBar clean build
 ```
 
 ## Testing
 
 ```bash
 # Run all tests
-xcodebuild test -scheme MiniSim -destination 'platform=macOS'
+xcodebuild test -scheme AndroidBar -destination 'platform=macOS'
 
 # Run a single test file
-xcodebuild test -scheme MiniSim -destination 'platform=macOS' \
-  -only-testing:MiniSimTests/DeviceParserTests
+xcodebuild test -scheme AndroidBar -destination 'platform=macOS' \
+  -only-testing:AndroidBarTests/DeviceParserTests
 
 # Run a single test method
-xcodebuild test -scheme MiniSim -destination 'platform=macOS' \
-  -only-testing:MiniSimTests/DeviceParserTests/testIOSSimulatorParser
+xcodebuild test -scheme AndroidBar -destination 'platform=macOS' \
+  -only-testing:AndroidBarTests/DeviceParserTests/testIOSSimulatorParser
 ```
 
 ## Linting
@@ -45,7 +45,7 @@ swiftlint --fix
 ## Project Structure
 
 ```
-MiniSim/
+AndroidBar/
 ├── Model/           # Data models (Device, Command, Platform, etc.)
 ├── Service/         # Business logic and services
 │   ├── CustomErrors/   # Custom error types
@@ -153,8 +153,8 @@ class AndroidActionFactory: ActionFactory {
 ```
 
 ### Testing
-- Test files mirror source structure in `MiniSimTests/`
-- Use `@testable import MiniSim`
+- Test files mirror source structure in `AndroidBarTests/`
+- Use `@testable import AndroidBar`
 - Create stub/mock classes for dependencies (see `Mocks/ShellStub.swift`)
 - Override class methods in nested test classes for mocking
 

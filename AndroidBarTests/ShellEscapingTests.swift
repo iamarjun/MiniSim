@@ -1,5 +1,5 @@
 import XCTest
-@testable import MiniSim
+@testable import AndroidBar
 
 final class ShellEscapingTests: XCTestCase {
   func testEscapeShellArgumentWithSpaces() {

@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import MiniSim
+@testable import AndroidBar
 
 final class UserDefaultsTests: XCTestCase {
     let savedParameters = UserDefaults.standard.parameters

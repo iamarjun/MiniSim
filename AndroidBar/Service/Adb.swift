@@ -1,6 +1,6 @@
 //
 //  Adb.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 01/02/2023.
 //

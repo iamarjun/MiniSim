@@ -24,7 +24,7 @@ class CopyIDAction: Action {
   func execute() throws {
     if let deviceId = device.identifier {
       NSPasteboard.general.copyToPasteboard(text: deviceId)
-      MiniSim.showSuccessMessage(title: "Device ID copied to clipboard!", message: deviceId)
+      AndroidBar.showSuccessMessage(title: "Device ID copied to clipboard!", message: deviceId)
     }
   }
 }
@@ -38,7 +38,7 @@ class CopyNameAction: Action {
 
   func execute() throws {
     NSPasteboard.general.copyToPasteboard(text: device.name)
-    MiniSim.showSuccessMessage(title: "Device name copied to clipboard!", message: device.name)
+    AndroidBar.showSuccessMessage(title: "Device name copied to clipboard!", message: device.name)
   }
 }
 
@@ -61,7 +61,7 @@ class DeleteAction: Action {
 
   func execute() throws {
     try self.device.delete()
-    MiniSim.showSuccessMessage(title: "Device deleted!", message: self.device.name)
+    AndroidBar.showSuccessMessage(title: "Device deleted!", message: self.device.name)
     NotificationCenter.default.post(name: .deviceDeleted, object: nil)
   }
 }
@@ -155,7 +155,7 @@ class UploadToDownloadsAction: Action {
       uploadedLabel = "\(result.uploadedCount) items"
     }
 
-    MiniSim.showSuccessMessage(
+    AndroidBar.showSuccessMessage(
       title: "Upload complete",
       message: "Uploaded \(uploadedLabel) to \(destinationPath)."
     )

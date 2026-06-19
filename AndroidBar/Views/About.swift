@@ -1,6 +1,6 @@
 //
 //  About.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 28/01/2023.
 //
@@ -30,7 +30,7 @@ struct About: View {
   var body: some View {
     VStack {
       Image(nsImage: NSImage(named: "AppIcon") ?? NSImage())
-      Text("MiniSim")
+      Text("AndroidBar")
         .font(.title)
       if let appVersion {
         Text("Version: \(appVersion)")
@@ -49,7 +49,7 @@ struct About: View {
 
       HStack {
         Button("GitHub") {
-          openURL(URL(string: "https://github.com/okwasniewski/MiniSim")!)
+          openURL(URL(string: "https://github.com/okwasniewski/AndroidBar")!)
         }
         Button("Buy me a coffee") {
           openURL(URL(string: "https://github.com/sponsors/okwasniewski")!)

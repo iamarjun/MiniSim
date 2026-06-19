@@ -1,4 +1,4 @@
-@testable import MiniSim
+@testable import AndroidBar
 import XCTest
 
 class UploadHelpersTests: XCTestCase {

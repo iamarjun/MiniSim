@@ -1,6 +1,6 @@
 //
 //  Collection+get.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 04/03/2023.
 //

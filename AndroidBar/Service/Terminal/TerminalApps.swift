@@ -1,6 +1,6 @@
 //
 //  TerminalApps.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Gokulakrishnan Subramaniyan on 02/12/23.
 //

@@ -1,4 +1,4 @@
-name: MiniSim CI
+name: AndroidBar CI
 
 on:
   pull_request:
@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-deriveddata-
       - name: Build
         run: |
-          set -o pipefail && xcodebuild -scheme MiniSim -destination 'platform=macOS' \
+          set -o pipefail && xcodebuild -scheme AndroidBar -destination 'platform=macOS' \
           -skipPackagePluginValidation -skipMacroValidation \
           -derivedDataPath ${{ env.DERIVED_DATA_PATH }} \
           build-for-testing \
@@ -65,7 +65,7 @@ jobs:
           key: ${{ runner.os }}-deriveddata-${{ hashFiles('**/*.xcodeproj/project.pbxproj') }}
       - name: Test
         run: |
-          set -o pipefail && xcodebuild -scheme MiniSim -destination 'platform=macOS' \
+          set -o pipefail && xcodebuild -scheme AndroidBar -destination 'platform=macOS' \
           -skipPackagePluginValidation -skipMacroValidation \
           -derivedDataPath ${{ env.DERIVED_DATA_PATH }} \
           test-without-building \

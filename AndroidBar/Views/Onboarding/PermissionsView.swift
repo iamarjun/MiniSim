@@ -1,6 +1,6 @@
 //
 //  PermissionsView.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 15/03/2023.
 //
@@ -23,7 +23,7 @@ struct PermissionsView: View {
             Spacer()
             OnboardingHeader(
                 title: "Permissions",
-                subTitle: "MiniSim needs access to system APIs that require your permission."
+                subTitle: "AndroidBar needs access to system APIs that require your permission."
             )
 
             Spacer()
@@ -81,7 +81,7 @@ struct PermissionsView: View {
             .onboardingContainer()
 
             Spacer()
-            OnboardingButton("Start using MiniSim!") {
+            OnboardingButton("Start using AndroidBar!") {
                 NSApplication.shared.mainWindow?.close()
                 UserDefaults.standard.isOnboardingFinished = true
             }

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "766BD22F2981628A0042261B"
-               BuildableName = "MiniSim.app"
-               BlueprintName = "MiniSim"
-               ReferencedContainer = "container:MiniSim.xcodeproj">
+               BuildableName = "AndroidBar.app"
+               BlueprintName = "AndroidBar"
+               ReferencedContainer = "container:AndroidBar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "76B70F732B0D359D009D87A4"
-               BuildableName = "MiniSimTests.xctest"
-               BlueprintName = "MiniSimTests"
-               ReferencedContainer = "container:MiniSim.xcodeproj">
+               BuildableName = "AndroidBarTests.xctest"
+               BlueprintName = "AndroidBarTests"
+               ReferencedContainer = "container:AndroidBar.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "766BD22F2981628A0042261B"
-            BuildableName = "MiniSim.app"
-            BlueprintName = "MiniSim"
-            ReferencedContainer = "container:MiniSim.xcodeproj">
+            BuildableName = "AndroidBar.app"
+            BlueprintName = "AndroidBar"
+            ReferencedContainer = "container:AndroidBar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,9 +73,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "766BD22F2981628A0042261B"
-            BuildableName = "MiniSim.app"
-            BlueprintName = "MiniSim"
-            ReferencedContainer = "container:MiniSim.xcodeproj">
+            BuildableName = "AndroidBar.app"
+            BlueprintName = "AndroidBar"
+            ReferencedContainer = "container:AndroidBar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,6 +1,6 @@
 //
 //  AndroidPathInput.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwasniewski on 19/03/2023.
 //

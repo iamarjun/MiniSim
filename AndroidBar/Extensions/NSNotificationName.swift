@@ -1,6 +1,6 @@
 //
 //  NSNotificationName.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 29/03/2023.
 //

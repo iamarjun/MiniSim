@@ -1,6 +1,6 @@
 //
 //  ParametersTableFormViewModel.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Jan Jaworski on 27/10/2023.
 //

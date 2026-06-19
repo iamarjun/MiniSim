@@ -1,6 +1,6 @@
 //
 //  AndroidHomeError.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwasniewski on 27/03/2023.
 //

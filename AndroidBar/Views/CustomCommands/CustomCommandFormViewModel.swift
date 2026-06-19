@@ -1,6 +1,6 @@
 //
 //  CustomCommandFormViewModel.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 15/05/2023.
 //

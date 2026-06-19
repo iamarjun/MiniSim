@@ -1,6 +1,6 @@
 //
 //  Onboarding.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 29/03/2023.
 //
@@ -67,7 +67,7 @@ extension Onboarding: NSWindowDelegate {
         if UserDefaults.standard.androidHome == nil {
             let shouldQuit = NSAlert.showQuestionDialog(
                 title: "Are you sure?",
-                message: "Closing this window will quit MiniSim."
+                message: "Closing this window will quit AndroidBar."
             )
             if !shouldQuit {
                 return false

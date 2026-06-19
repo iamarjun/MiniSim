@@ -1,6 +1,6 @@
 //
 //  NSMenuItem+ConvenienceInit.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Anton Kolchunov on 11.10.23.
 //

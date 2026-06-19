@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 26/01/2023.
 //
@@ -9,13 +9,13 @@ import Cocoa
 import KeyboardShortcuts
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private var miniSim: MiniSim!
+    private var androidBar: AndroidBar!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        miniSim = MiniSim()
+        androidBar = AndroidBar()
 
         KeyboardShortcuts.onKeyUp(for: .toggleAndroidBar) {
-            self.miniSim.open()
+            self.androidBar.open()
         }
     }
 

@@ -1,6 +1,6 @@
 //
 //  ParametersTable.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwasniewski on 12/03/2023.
 //

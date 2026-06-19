@@ -1,6 +1,6 @@
 //
 //  DeviceType.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Rami Elwan on 27.08.24.
 //

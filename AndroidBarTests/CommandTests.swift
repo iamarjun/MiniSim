@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import MiniSim
+@testable import AndroidBar
 
 final class CommandTests: XCTestCase {
   func testEncodingDecoding() throws {

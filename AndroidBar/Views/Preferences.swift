@@ -1,4 +1,4 @@
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 28/01/2023.
 //

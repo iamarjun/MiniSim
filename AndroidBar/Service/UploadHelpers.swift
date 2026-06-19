@@ -61,7 +61,7 @@ struct AndroidUploadPathBuilder {
 
 struct UploadHelpers {
   private static let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier ?? "MiniSim",
+    subsystem: Bundle.main.bundleIdentifier ?? "AndroidBar",
     category: "Upload"
   )
 

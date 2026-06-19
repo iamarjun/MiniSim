@@ -1,16 +1,16 @@
-# MiniSim
+# AndroidBar
 
-![App logo](/MiniSim/Assets.xcassets/AppIcon.appiconset/256.png)
+![App logo](/AndroidBar/Assets.xcassets/AppIcon.appiconset/256.png)
 
 ## About
 
-MiniSim is a small utility menu bar app for launching Android 🤖 and iOS  emulators (and more!).
+AndroidBar is a small utility menu bar app for launching Android 🤖 and iOS  emulators (and more!).
 
 Written in Swift and AppKit.
 
 ## Install
 
-Download the app from [releases](https://github.com/okwasniewski/MiniSim/releases) page or use [Homebrew](https://brew.sh):
+Download the app from [releases](https://github.com/okwasniewski/AndroidBar/releases) page or use [Homebrew](https://brew.sh):
 
 ```shell
 brew install --cask minisim
@@ -56,4 +56,4 @@ https://user-images.githubusercontent.com/52801365/224473566-a6248f20-8fc9-4b8e-
 
 There is a global shortcut for invoking the menu: <kbd>⌥ + ⇧ + e</kbd>.
 
-Checkout the docs [here](https://github.com/okwasniewski/MiniSim/tree/main/docs).
+Checkout the docs [here](https://github.com/okwasniewski/AndroidBar/tree/main/docs).

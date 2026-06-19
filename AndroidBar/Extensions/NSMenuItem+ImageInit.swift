@@ -1,6 +1,6 @@
 //
 //  NSMenuItem+ImageInit.swift
-//  MiniSim
+//  AndroidBar
 //
 //  Created by Oskar Kwaśniewski on 26/01/2023.
 //

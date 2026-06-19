@@ -1,8 +1,8 @@
 import Foundation
-@testable import MiniSim
+@testable import AndroidBar
 
 class ShellStub: ShellProtocol {
-    private let queue = DispatchQueue(label: "com.minisim.shellstub", attributes: .concurrent)
+    private let queue = DispatchQueue(label: "com.androidbar.shellstub", attributes: .concurrent)
 
     private var _lastExecutedCommand: String = ""
     private var _lastPassedArguments: [String] = []
