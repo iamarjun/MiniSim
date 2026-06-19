@@ -3,7 +3,6 @@ import XCTest
 
 class DeviceDiscoveryTests: XCTestCase {
   var androidDiscovery: AndroidDeviceDiscovery!
-  var iosDiscovery: IOSDeviceDiscovery!
   var shellStub: ShellStub!
 
   override func setUp() {
@@ -11,8 +10,6 @@ class DeviceDiscoveryTests: XCTestCase {
     shellStub = ShellStub()
     androidDiscovery = AndroidDeviceDiscovery()
     androidDiscovery.shell = shellStub
-    iosDiscovery = IOSDeviceDiscovery()
-    iosDiscovery.shell = shellStub
   }
 
   override func tearDown() {
@@ -20,7 +17,6 @@ class DeviceDiscoveryTests: XCTestCase {
     super.tearDown()
   }
 
-  // Android Tests
   func testAndroidDeviceDiscoveryCommands() throws {
     shellStub.mockedExecute = { command, arguments, _ in
       if command.hasSuffix("adb") {
@@ -48,37 +44,5 @@ class DeviceDiscoveryTests: XCTestCase {
     }
 
     XCTAssertNoThrow(try androidDiscovery.checkSetup())
-  }
-
-  // iOS Tests
-  func testIOSDeviceDiscoveryCommands() throws {
-    throw XCTSkip("TODO: Test is failing on CI")
-
-    shellStub.mockedExecute = { command, arguments, _ in
-      XCTAssertEqual(command, DeviceConstants.ProcessPaths.xcrun.rawValue)
-      if arguments.contains("devicectl") {
-        XCTAssertTrue(arguments.contains("list"))
-        XCTAssertTrue(arguments.contains("devices"))
-        return ""
-      }
-      if arguments.contains("simctl") {
-        XCTAssertEqual(arguments, ["simctl", "list", "devices", "available"])
-        return "mock simctl output"
-      }
-      XCTFail("Unexpected arguments: \(arguments)")
-      return ""
-    }
-
-    _ = try iosDiscovery.getDevices(type: .physical)
-    _ = try iosDiscovery.getDevices(type: .virtual)
-    _ = try iosDiscovery.getDevices()
-
-    XCTAssertTrue(shellStub.lastExecutedCommand.contains("xcrun"))
-  }
-
-  func testIOSCheckSetup() throws {
-    let xcrunPath = DeviceConstants.ProcessPaths.xcrun.rawValue
-    XCTAssertNoThrow(try iosDiscovery.checkSetup())
-    XCTAssertTrue(FileManager.default.fileExists(atPath: xcrunPath))
   }
 }

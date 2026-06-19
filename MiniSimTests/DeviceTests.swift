@@ -3,32 +3,6 @@ import XCTest
 @testable import MiniSim
 
 final class DeviceTests: XCTestCase {
-  func testDisplayNameIOSWithVersion() {
-    let device = Device(
-      name: "iPhone 15 Pro",
-      version: "iOS 17.5",
-      identifier: "test-uuid",
-      booted: false,
-      platform: .ios,
-      type: .virtual
-    )
-
-    XCTAssertEqual(device.displayName, "iPhone 15 Pro - (iOS 17.5)")
-  }
-
-  func testDisplayNameIOSWithoutVersion() {
-    let device = Device(
-      name: "iPhone 15 Pro",
-      version: nil,
-      identifier: "test-uuid",
-      booted: false,
-      platform: .ios,
-      type: .virtual
-    )
-
-    XCTAssertEqual(device.displayName, "iPhone 15 Pro")
-  }
-
   func testDisplayNameAndroid() {
     let device = Device(
       name: "Pixel_5_API_33",
@@ -44,11 +18,11 @@ final class DeviceTests: XCTestCase {
 
   func testEncodingDecoding() throws {
     let device = Device(
-      name: "iPhone 15 Pro",
-      version: "iOS 17.5",
-      identifier: "test-uuid",
+      name: "Pixel_5_API_33",
+      version: "13",
+      identifier: "emulator-5554",
       booted: true,
-      platform: .ios,
+      platform: .android,
       type: .virtual
     )
 
@@ -65,17 +39,17 @@ final class DeviceTests: XCTestCase {
 
   func testEncodingIncludesDisplayName() throws {
     let device = Device(
-      name: "iPhone 15",
-      version: "iOS 17.5",
-      identifier: "uuid",
+      name: "Pixel_5_API_33",
+      version: "13",
+      identifier: "emulator-5554",
       booted: false,
-      platform: .ios,
+      platform: .android,
       type: .virtual
     )
 
     let encoded = try JSONEncoder().encode(device)
     let json = try JSONSerialization.jsonObject(with: encoded) as? [String: Any]
 
-    XCTAssertEqual(json?["displayName"] as? String, "iPhone 15 - (iOS 17.5)")
+    XCTAssertEqual(json?["displayName"] as? String, "Pixel_5_API_33")
   }
 }
