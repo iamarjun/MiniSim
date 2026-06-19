@@ -4,23 +4,19 @@
 
 ## About
 
-AndroidBar is a small utility menu bar app for launching Android 🤖 and iOS  emulators (and more!).
+AndroidBar is a lightweight macOS menu bar app for launching and managing Android emulators.
 
 Written in Swift and AppKit.
 
 ## Install
 
-Download the app from [releases](https://github.com/okwasniewski/AndroidBar/releases) page or use [Homebrew](https://brew.sh):
+Build from source:
 
 ```shell
-brew install --cask minisim
+git clone https://github.com/iamarjun/AndroidBar.git
+cd AndroidBar
+open AndroidBar.xcodeproj
 ```
-
-### Raycast extension
-
-You can use Minisim together with a [Raycast](https://www.raycast.com) extension.
-
-<a title="Install minisim Raycast Extension" href="https://www.raycast.com/okwasniewski/minisim"><img src="https://www.raycast.com/okwasniewski/minisim/install_button@2x.png?v=1.1" height="64" alt="" style="height: 64px;"></a>
 
 ## Features
 
@@ -28,32 +24,27 @@ You can use Minisim together with a [Raycast](https://www.raycast.com) extension
 - Fast, 100% native
 - Open Source
 - Open with shortcut: <kbd>⌥ + ⇧ + e</kbd>
-- Launch iOS emulators
-  - Copy device UDID
-  - Copy device name
-  - Delete simulators
-- Launch Android emulators
-  - Cold boot android emulators
-  - Run android emulators without audio (Your bluetooth headphones will thank you 🎧)
-  - Toggle a11y on selected emulator
+- Launch Android emulators (virtual + physical)
+  - Cold boot emulators
+  - Run without audio (your Bluetooth headphones will thank you 🎧)
+  - Toggle accessibility on selected emulator
   - Copy device name
   - Copy device ADB id
+  - Upload files to emulator
 - Focus devices using accessibility API
 - Set default launch flags
 - Indicate running devices
-
-## Screenshots
-
-<img width="512" src="https://user-images.githubusercontent.com/52801365/223483262-aa3bad72-2948-4893-87a0-578e5d3d8e89.png">
-
-https://user-images.githubusercontent.com/52801365/224473566-a6248f20-8fc9-4b8e-ab95-64e85bc6d5c6.mp4
+- Custom commands
 
 ## Usage
 
-> **important**
-> This utility uses `xcrun` and `sdk/emulator` to fetch available devices on your machine.
-> It might not work if you don't have a proper XCode and Android Studio setup.
+> **Important**
+> Requires Android Studio and a working `adb` / `emulator` setup on your machine.
 
-There is a global shortcut for invoking the menu: <kbd>⌥ + ⇧ + e</kbd>.
+Global shortcut to open the menu: <kbd>⌥ + ⇧ + e</kbd>
 
-Checkout the docs [here](https://github.com/okwasniewski/AndroidBar/tree/main/docs).
+Check out the docs [here](https://github.com/iamarjun/AndroidBar/tree/main/docs).
+
+## Credits
+
+Forked from [MiniSim](https://github.com/okwasniewski/MiniSim) by [@okwasniewski](https://github.com/okwasniewski). iOS simulator support removed; Android-only.

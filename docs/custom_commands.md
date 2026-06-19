@@ -1,50 +1,32 @@
 ## What are custom commands?
 
-Custom commands allows you to add additional menu items that speed up your workflow. If you have a command that you execute regularly through terminal you can convert it to custom command and make your life easier.
+Custom commands let you add additional menu items that speed up your workflow. If you have a command you run regularly in the terminal, you can convert it to a custom command.
 
-Some examples of custom commands:
+Some examples:
 
-- Execute a sequence of clicks to log into your app
-- Reverse Android emulator port (for React Native)
-- Open iOS deep link
-- Open Logcat
+- Reverse Android emulator port (for React Native / Metro)
+- Launch Logcat
+- Execute a sequence of ADB commands to log into your app
+- Wipe emulator data
 
 ## Creating your first command
 
 1. Go to Preferences > Commands > Add new
 2. Assign a name
-3. Write custom command
-
-For Android you will most likely use ADB:
-
-```sh
-$adb_path -s $adb_id reverse tcp:8081 tcp:8081
-```
-
-You can find available variables that you can use based on selected toggles if command needs booted device or not.
-
-Let's break down the command:
-
-- `$adb_path` - absolute path of the ADB utility
-- `-s $adb_id` - executes command on emulator with a given ID (useful when you have multiple emulators running)
-- `reverse tcp:8081 tcp:8081` rest of the ADB command. Run `adb --help` to check out what can be done.
-
-For iOS you will most likely use `xcrun simctl` utility:
-
-```sh
-$xcrun_path simctl openurl booted "app://test.com"
-```
-
-You can identify simulators by the `$uuid` variable.
-
-4. Choose icon
+3. Write a custom command using the available variables (see below)
+4. Choose an icon
 5. Click Add
 
-Done! ✅
+## Available variables
 
-## Ready to use recipes
+| Variable | Description |
+|---|---|
+| `$adb_path` | Absolute path to the `adb` binary |
+| `$adb_id` | ADB device ID of the selected emulator/device |
+| `$android_home_path` | Path to `$ANDROID_HOME` |
+| `$device_name` | Name of the selected device |
 
-Here you can find a list of ready to use commands.
+## Ready-to-use recipes
 
 ### Reverse React Native Metro port
 
@@ -56,20 +38,19 @@ $adb_path -s $adb_id reverse tcp:8081 tcp:8081
 
 ```sh
 osascript -e 'tell app "Terminal"
-    do script "adb logcat -v color"
+    do script "$adb_path -s $adb_id logcat -v color"
 end tell'
 ```
 
-### Login in to your app
+### Log into your app
 
 ```sh
-$adb_path -s $adb_id
-	shell input text "login@gmail.com"
-	&& $adb_path -s $adb_id shell input tap 500 600
-	&& $adb_path -s $adb_id shell input text "password"
+$adb_path -s $adb_id shell input text "login@example.com" \
+  && $adb_path -s $adb_id shell input tap 500 600 \
+  && $adb_path -s $adb_id shell input text "password"
 ```
 
-_This might need some tweaking to fit your app_
+_Adjust tap coordinates to match your app's UI._
 
 ### Wipe emulator data
 
