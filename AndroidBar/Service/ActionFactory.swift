@@ -28,20 +28,6 @@ class AndroidActionFactory: ActionFactory {
       return CustomCommandAction(device: device, itemName: itemName)
     case .logcat:
       return LaunchLogCat(device: device)
-    case .showWindow:
-      return ShowWindowAction(device: device)
-    case .restart:
-      return RestartCommand(device: device)
-    case .takeScreenshot:
-      return TakeScreenshotAction(device: device)
-    case .recordScreen:
-      return RecordScreenAction(device: device)
-    case .openInStudio:
-      return OpenInStudioAction(device: device)
-    case .wipeData:
-      return WipeDataAction(device: device, skipConfirmation: skipConfirmation)
-    case .stop:
-      return StopAction(device: device)
     }
   }
 }

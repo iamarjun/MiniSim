@@ -17,12 +17,6 @@ class Menu: NSMenu {
         didSet {
             populateDevicesMenu(devices)
             assignKeyEquivalents()
-            let runningCount = devices.filter { $0.booted }.count
-            NotificationCenter.default.post(
-                name: .devicesUpdated,
-                object: nil,
-                userInfo: ["runningCount": runningCount]
-            )
         }
         willSet {
             let deviceNames = Set(devices.map { $0.displayName })
@@ -158,9 +152,6 @@ class Menu: NSMenu {
 
     // MARK: Populate sections
     private func populateDevicesMenu(_ devices: [Device]) {
-        let runningCount = devices.filter { $0.booted }.count
-        updateSectionHeader(for: .androidVirtual, runningCount: runningCount)
-
         let platformSections: [DeviceListSection] = sections
         for section in platformSections {
             let sectionDevices = filter(devices: devices, for: section)
@@ -168,19 +159,6 @@ class Menu: NSMenu {
             let menuItems = sectionDevices.map { createMenuItem(for: $0) }
             self.updateSection(with: menuItems, section: section)
         }
-    }
-
-    private func updateSectionHeader(for section: DeviceListSection, runningCount: Int) {
-        guard let header = items.first(where: { $0.tag == section.rawValue }) else { return }
-        let title = NSMutableAttributedString(string: section.title)
-        if runningCount > 0 {
-            let greenColor = NSColor(calibratedRed: 55 / 255, green: 214 / 255, blue: 122 / 255, alpha: 1)
-            title.append(NSAttributedString(
-                string: "  \(runningCount) running",
-                attributes: [.foregroundColor: greenColor]
-            ))
-        }
-        header.attributedTitle = title
     }
 
     var sections: [DeviceListSection] {

@@ -27,12 +27,6 @@ extension NSMenuItem {
         self.toolTip = menuItem.toolTip ?? menuItem.title
         self.target = target
         self.action = action
-        if menuItem.isDestructive {
-            self.attributedTitle = NSAttributedString(
-                string: menuItem.title,
-                attributes: [.foregroundColor: NSColor.systemRed]
-            )
-        }
     }
 
     convenience init(

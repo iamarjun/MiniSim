@@ -17,12 +17,12 @@ protocol SubMenuActionItem: SubMenuItem {
     var bootsDevice: Bool { get }
     var image: NSImage? { get }
     var toolTip: String? { get }
-    var isDestructive: Bool { get }
 }
 
 extension SubMenuActionItem {
-    var toolTip: String? { nil }
-    var isDestructive: Bool { false }
+    var toolTip: String? {
+        nil
+    }
 }
 
 protocol SubMenuSectionItem: SubMenuItem {
@@ -41,13 +41,6 @@ enum SubMenuItems {
         case delete
         case logcat
         case upload
-        case showWindow
-        case restart
-        case takeScreenshot
-        case recordScreen
-        case openInStudio
-        case wipeData
-        case stop
         case customCommand = 200
     }
 
@@ -63,7 +56,10 @@ enum SubMenuItems {
         let tag = Tags.copyName.rawValue
         let bootsDevice = false
         let needBootedDevice = false
-        let image = NSImage(systemSymbolName: "square.and.arrow.up", accessibilityDescription: "Copy name")
+        let image = NSImage(
+            systemSymbolName: "square.and.arrow.up",
+            accessibilityDescription: "Copy name"
+        )
     }
 
     struct CopyID: SubMenuActionItem {
@@ -71,7 +67,10 @@ enum SubMenuItems {
         let tag = Tags.copyID.rawValue
         let bootsDevice = false
         let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "doc.on.doc", accessibilityDescription: "Copy ID")
+        let image = NSImage(
+            systemSymbolName: "doc.on.doc",
+            accessibilityDescription: "Copy ID"
+        )
     }
 
     struct ColdBoot: SubMenuActionItem {
@@ -79,7 +78,10 @@ enum SubMenuItems {
         let tag = Tags.coldBoot.rawValue
         let bootsDevice = true
         let needBootedDevice = false
-        let image = NSImage(systemSymbolName: "sunrise.fill", accessibilityDescription: "Cold boot")
+        let image = NSImage(
+            systemSymbolName: "sunrise.fill",
+            accessibilityDescription: "Cold boot"
+        )
     }
 
     struct NoAudio: SubMenuActionItem {
@@ -87,7 +89,10 @@ enum SubMenuItems {
         let tag = Tags.noAudio.rawValue
         let bootsDevice = true
         let needBootedDevice = false
-        let image = NSImage(systemSymbolName: "speaker.slash.fill", accessibilityDescription: "Run without audio")
+        let image = NSImage(
+            systemSymbolName: "speaker.slash.fill",
+            accessibilityDescription: "Run without audio"
+        )
     }
 
     struct ToggleA11y: SubMenuActionItem {
@@ -95,7 +100,10 @@ enum SubMenuItems {
         let tag = Tags.toggleA11y.rawValue
         let bootsDevice = false
         let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "figure.walk.circle.fill", accessibilityDescription: "Toggle accessibility")
+        let image = NSImage(
+            systemSymbolName: "figure.walk.circle.fill",
+            accessibilityDescription: "Toggle accessibility"
+        )
     }
 
     struct Paste: SubMenuActionItem {
@@ -103,7 +111,10 @@ enum SubMenuItems {
         let tag = Tags.paste.rawValue
         let bootsDevice = false
         let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "keyboard", accessibilityDescription: "Keyboard")
+        let image = NSImage(
+            systemSymbolName: "keyboard",
+            accessibilityDescription: "Keyboard"
+        )
     }
 
     struct Upload: SubMenuActionItem {
@@ -111,7 +122,10 @@ enum SubMenuItems {
         let tag = Tags.upload.rawValue
         let bootsDevice = false
         let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "tray.and.arrow.up", accessibilityDescription: "Upload")
+        let image = NSImage(
+            systemSymbolName: "tray.and.arrow.up",
+            accessibilityDescription: "Upload"
+        )
         let toolTip: String? = NSLocalizedString(
             "Upload file/folder to internal storage Downloads folder",
             comment: ""
@@ -123,8 +137,10 @@ enum SubMenuItems {
         let tag = Tags.delete.rawValue
         let bootsDevice = false
         let needBootedDevice = false
-        let image = NSImage(systemSymbolName: "trash", accessibilityDescription: "Delete emulator")
-        let isDestructive = true
+        let image = NSImage(
+            systemSymbolName: "trash",
+            accessibilityDescription: "Delete emulator"
+        )
     }
 
     struct LaunchLogCat: SubMenuActionItem {
@@ -132,127 +148,61 @@ enum SubMenuItems {
         let tag = Tags.logcat.rawValue
         let bootsDevice = false
         let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "terminal", accessibilityDescription: "Launch Logcat")
-    }
-
-    struct ShowWindow: SubMenuActionItem {
-        let title = NSLocalizedString("Show window", comment: "")
-        let tag = Tags.showWindow.rawValue
-        let bootsDevice = false
-        let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "macwindow", accessibilityDescription: "Show window")
-    }
-
-    struct Restart: SubMenuActionItem {
-        let title = NSLocalizedString("Restart", comment: "")
-        let tag = Tags.restart.rawValue
-        let bootsDevice = false
-        let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "arrow.counterclockwise", accessibilityDescription: "Restart")
-    }
-
-    struct TakeScreenshot: SubMenuActionItem {
-        let title = NSLocalizedString("Take screenshot", comment: "")
-        let tag = Tags.takeScreenshot.rawValue
-        let bootsDevice = false
-        let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "camera", accessibilityDescription: "Take screenshot")
-    }
-
-    struct RecordScreen: SubMenuActionItem {
-        let title = NSLocalizedString("Record screen", comment: "")
-        let tag = Tags.recordScreen.rawValue
-        let bootsDevice = false
-        let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "record.circle", accessibilityDescription: "Record screen")
-    }
-
-    struct OpenInStudio: SubMenuActionItem {
-        let title = NSLocalizedString("Open in Android Studio", comment: "")
-        let tag = Tags.openInStudio.rawValue
-        let bootsDevice = false
-        let needBootedDevice = false
-        let image = NSImage(named: "android_studio")
-    }
-
-    struct WipeData: SubMenuActionItem {
-        let title = NSLocalizedString("Wipe data…", comment: "")
-        let tag = Tags.wipeData.rawValue
-        let bootsDevice = false
-        let needBootedDevice = false
-        let image = NSImage(systemSymbolName: "externaldrive.badge.xmark", accessibilityDescription: "Wipe data")
-        let isDestructive = true
-    }
-
-    struct Stop: SubMenuActionItem {
-        let title = NSLocalizedString("Stop", comment: "")
-        let tag = Tags.stop.rawValue
-        let bootsDevice = false
-        let needBootedDevice = true
-        let image = NSImage(systemSymbolName: "stop.fill", accessibilityDescription: "Stop")
-        let isDestructive = true
+        let image = NSImage(
+            systemSymbolName: "terminal",
+            accessibilityDescription: "Launch Logcat"
+        )
     }
 }
 
 extension SubMenuItems {
-    static func items(platform: Platform, deviceType: DeviceType) -> [SubMenuItem] {
-        switch deviceType {
-        case .physical:
-            return [
-                CopyName(),
-                CopyID(),
+  static func items(platform: Platform, deviceType: DeviceType) -> [SubMenuItem] {
+    switch deviceType {
+    case .physical:
+      return [
+        CopyName(),
+        CopyID(),
 
-                Separator(),
+        Separator(),
 
-                ToggleA11y(),
-                Paste(),
-                LaunchLogCat(),
+        ToggleA11y(),
+        Paste(),
+        LaunchLogCat(),
 
-                Separator(),
+        Separator(),
 
-                SectionTitle(title: NSLocalizedString("Local Files", comment: ""), needBootedDevice: true),
-                Upload(),
+        SectionTitle(
+            title: NSLocalizedString("Local Files", comment: ""),
+            needBootedDevice: true
+        ),
+        Upload()
+      ]
 
-                Separator(),
+    case .virtual:
+      return [
+        CopyName(),
+        CopyID(),
 
-                OpenInStudio()
-            ]
+        Separator(),
 
-        case .virtual:
-            return [
-                ShowWindow(),
+        ColdBoot(),
+        NoAudio(),
+        ToggleA11y(),
+        Paste(),
+        LaunchLogCat(),
 
-                Separator(),
+        Separator(),
 
-                ColdBoot(),
-                NoAudio(),
-                Restart(),
+        SectionTitle(
+            title: NSLocalizedString("Local Files", comment: ""),
+            needBootedDevice: true
+        ),
+        Upload(),
 
-                Separator(),
+        Separator(),
 
-                TakeScreenshot(),
-                RecordScreen(),
-                OpenInStudio(),
-                CopyName(),
-                CopyID(),
-
-                Separator(),
-
-                ToggleA11y(),
-                Paste(),
-                LaunchLogCat(),
-
-                Separator(),
-
-                SectionTitle(title: NSLocalizedString("Local Files", comment: ""), needBootedDevice: true),
-                Upload(),
-
-                Separator(),
-
-                WipeData(),
-                Stop(),
-                DeleteEmulator()
-            ]
-        }
+        DeleteEmulator()
+      ]
     }
+  }
 }

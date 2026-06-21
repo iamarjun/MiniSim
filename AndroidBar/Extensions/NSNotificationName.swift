@@ -12,5 +12,4 @@ extension Notification.Name {
     static let menuDidClose = Notification.Name("menuDidClose")
     static let deviceDeleted = Notification.Name("deviceDeleted")
     static let commandDidSucceed = Notification.Name("commandDidSucceed")
-    static let devicesUpdated = Notification.Name("devicesUpdated")
 }
