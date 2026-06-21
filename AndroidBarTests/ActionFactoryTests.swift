@@ -45,6 +45,20 @@ class ActionFactoryTests: XCTestCase {
         XCTAssertTrue(action is CustomCommandAction)
       case .logcat:
         XCTAssertTrue(action is LaunchLogCat)
+      case .showWindow:
+        XCTAssertTrue(action is ShowWindowAction)
+      case .restart:
+        XCTAssertTrue(action is RestartCommand)
+      case .takeScreenshot:
+        XCTAssertTrue(action is TakeScreenshotAction)
+      case .recordScreen:
+        XCTAssertTrue(action is RecordScreenAction)
+      case .openInStudio:
+        XCTAssertTrue(action is OpenInStudioAction)
+      case .wipeData:
+        XCTAssertTrue(action is WipeDataAction)
+      case .stop:
+        XCTAssertTrue(action is StopAction)
       }
     }
   }

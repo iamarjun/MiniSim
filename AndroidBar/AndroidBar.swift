@@ -16,7 +16,6 @@ class AndroidBar: NSObject {
     @objc let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     private var isOnboardingFinishedObserver: NSKeyValueObservation?
-    private var menuImageObserver: NSKeyValueObservation?
 
     private lazy var onboarding = Onboarding()
 
@@ -31,7 +30,6 @@ class AndroidBar: NSObject {
 
     deinit {
         isOnboardingFinishedObserver?.invalidate()
-        menuImageObserver?.invalidate()
         NotificationCenter.default.removeObserver(self, name: .commandDidSucceed, object: nil)
         NotificationCenter.default.removeObserver(self, name: .deviceDeleted, object: nil)
     }
@@ -98,10 +96,6 @@ class AndroidBar: NSObject {
                 self.onboarding.showPopOver(button: self.statusItem.button)
             }
         }
-        menuImageObserver = UserDefaults.standard.observe(\.menuImage, options: .new) { _, _ in
-            self.setMenuImage()
-        }
-
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(
             self,
@@ -115,6 +109,12 @@ class AndroidBar: NSObject {
             name: .deviceDeleted,
             object: nil
         )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(handleDevicesUpdated),
+            name: .devicesUpdated,
+            object: nil
+        )
     }
 
     private func setDefaultValues() {
@@ -124,12 +124,17 @@ class AndroidBar: NSObject {
         ])
     }
 
-    private func setMenuImage() {
+    private func setMenuImage(hasRunning: Bool = false) {
         if let button = statusItem.button {
-          button.toolTip = "AndroidBar"
-          let itemImage = MenuImage(rawValue: UserDefaults.standard.menuImage)?.image
-          itemImage?.isTemplate = true
-          button.image = itemImage
+            button.toolTip = "AndroidBar"
+            button.image = MenuBarGlyph.image(hasRunning: hasRunning)
+        }
+    }
+
+    @objc private func handleDevicesUpdated(_ notification: Notification) {
+        let runningCount = (notification.userInfo?["runningCount"] as? Int) ?? 0
+        DispatchQueue.main.async {
+            self.setMenuImage(hasRunning: runningCount > 0)
         }
     }
 

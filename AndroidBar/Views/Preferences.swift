@@ -9,7 +9,6 @@ import Settings
 import SwiftUI
 
 struct Preferences: View {
-    @State var menuImageSelected: String = "box"
     @State private var preferedTerminal: Terminal
 
     init() {
@@ -23,38 +22,24 @@ struct Preferences: View {
 
     var body: some View {
         Settings.Container(contentWidth: 400) {
-            Settings.Section(title: "Icon:") {
-                Picker("", selection: $menuImageSelected) {
-                    ForEach(MenuImage.allCases, id: \.self) { menuImage in
-                        Image(nsImage: menuImage.image ?? NSImage())
-                           .tag(menuImage.rawValue)
-                    }
-                }
-                .fixedSize(horizontal: true, vertical: false)
-                .onChange(of: menuImageSelected) { _ in
-                    UserDefaults.standard.menuImage = menuImageSelected
-                }
-                Text("The icon displayed in the Menu Bar.")
-                    .descriptionText()
-            }
             Settings.Section(title: "Preferred Terminal:") {
-                  Picker("", selection: $preferedTerminal) {
+                Picker("", selection: $preferedTerminal) {
                     let availableTerminal = Terminal.allCases.filter { $0.isAvailable() }
                     ForEach(availableTerminal, id: \.self) { terminal in
-                      HStack {
-                        Image(nsImage: terminal.getAppIcon() ?? NSImage())
-                        Text(terminal.rawValue)
-                      }
-                      .tag(terminal.rawValue)
+                        HStack {
+                            Image(nsImage: terminal.getAppIcon() ?? NSImage())
+                            Text(terminal.rawValue)
+                        }
+                        .tag(terminal.rawValue)
                     }
-                  }
-                  .onChange(of: preferedTerminal) { _ in
-                      UserDefaults.standard.setValue(
-                          preferedTerminal.rawValue, forKey: UserDefaults.Keys.preferedTerminal
-                      )
-                  }
-                  Text("Users can choose their preferred terminal from the above supported terminal list")
-                      .descriptionText()
+                }
+                .onChange(of: preferedTerminal) { _ in
+                    UserDefaults.standard.setValue(
+                        preferedTerminal.rawValue, forKey: UserDefaults.Keys.preferedTerminal
+                    )
+                }
+                Text("Users can choose their preferred terminal from the above supported terminal list")
+                    .descriptionText()
             }
             Settings.Section(title: "Hotkey:") {
                 KeyboardShortcuts.Recorder("", name: .toggleAndroidBar)
@@ -73,14 +58,7 @@ struct Preferences: View {
                 LaunchAtLogin.Toggle("Launch at login")
             }
         }
-        .frame(minWidth: 650, minHeight: 450)
-        .onAppear {
-            MenuImage.allCases.forEach { image in
-                if UserDefaults.standard.menuImage == image.rawValue {
-                    menuImageSelected = image.rawValue
-                }
-            }
-        }
+        .frame(minWidth: 650, minHeight: 400)
     }
 
     func resetDefaults() {
